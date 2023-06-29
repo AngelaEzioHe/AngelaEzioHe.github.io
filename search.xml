@@ -29,11 +29,11 @@
     
     
     <entry>
-      <title>Git用法(基础)</title>
-      <link href="/2023/05/10/2023-5-10-Git%E7%94%A8%E6%B3%95-%E5%9F%BA%E7%A1%80/"/>
-      <url>/2023/05/10/2023-5-10-Git%E7%94%A8%E6%B3%95-%E5%9F%BA%E7%A1%80/</url>
+      <title>Git用法(进阶)</title>
+      <link href="/2023/05/10/2023-5-10-Git%E7%94%A8%E6%B3%95-%E8%BF%9B%E9%98%B6/"/>
+      <url>/2023/05/10/2023-5-10-Git%E7%94%A8%E6%B3%95-%E8%BF%9B%E9%98%B6/</url>
       
-        <content type="html"><![CDATA[<h1 id="Git用法（基础）"><a href="#Git用法（基础）" class="headerlink" title="Git用法（基础）"></a>Git用法（基础）</h1><h2 id="使用之前"><a href="#使用之前" class="headerlink" title="使用之前"></a>使用之前</h2><ul><li><code>git config  - -global user.name &quot;提交人&quot;</code></li><li><code>git config  - -global user.email &quot;邮箱地址&quot;</code></li></ul><h2 id="提交步骤"><a href="#提交步骤" class="headerlink" title="提交步骤"></a>提交步骤</h2><ol><li><code>git init</code> 初始化git仓库</li><li><code>git status</code> 查看文件状态</li><li><code>git add 文件名</code> 提交文件到暂存区</li><li><code>git commit -m 提交信息</code> 向仓库中提交代码</li><li><code>git log</code> 查看提交记录</li></ol><h2 id="撤销指令"><a href="#撤销指令" class="headerlink" title="撤销指令"></a>撤销指令</h2><p><code>git rm  - -cached 文件名</code> 将文件从git的暂存区中移除</p><p><code>git checkout 文件名</code> 将不正确修改的文件返回成暂存区中的文件。（即用原本的文件覆盖新的、未托管的文件）</p><p><code>git reset  - -hard 文件ID</code> 将git仓库中指定的更新记录恢复出来，并且<strong>覆盖</strong>暂存区和工作目录（电脑上的文件夹）；即只保留ID对应的文件，其余的删除掉。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Git用法（进阶）"><a href="#Git用法（进阶）" class="headerlink" title="Git用法（进阶）"></a>Git用法（进阶）</h1><h2 id="分支细分"><a href="#分支细分" class="headerlink" title="分支细分"></a>分支细分</h2><ol><li><strong>主分支（master）</strong>：第一次向git仓库中提交更新记录时自定产生的一个分支。</li><li><strong>开发分支（develop）</strong>：作为开发的分支，基于master分支创建。</li><li><strong>功能分支（feature）</strong>：作为开发具体功能的分支，基于开发分支创建。</li></ol><p><strong>具体的功能在功能分支上实现，再合并到开发分支上，最终将开发分支合并到主分支，</strong></p><p>功能分支-&gt;开发分支-&gt;主分支</p><h2 id="分支命令"><a href="#分支命令" class="headerlink" title="分支命令"></a>分支命令</h2><ul><li><code>git branch</code> <strong>查看分支</strong></li><li><code>git branch 分支名称</code> <strong>创建分支（基于当前分支）</strong></li><li><code>git checkout 分支名称</code> <strong>切换分支</strong><ul><li>切换分支之前，当前分支的工作一定提交到git仓库中，<strong>保证当前分支上的工作区是完全干净的状态</strong>。否则可能会寄。</li></ul></li><li><code>git merge 来源分支</code><strong>合并分支</strong>（将来源分支合并到所在分支）</li><li><code>git branch -d 分支名称</code><strong>删除分支</strong>（分支被合并后才允许删除）<em>（-D是强制删除）</em></li></ul><h2 id="暂时保存更改"><a href="#暂时保存更改" class="headerlink" title="暂时保存更改"></a>暂时保存更改</h2><p>在git中，可以临时提取分支上所有的改动并存储，让开发人员得到一个干净的工作副本，临时转向其他工作。</p><p><strong>使用场景：</strong>分支临时切换</p><ul><li>存储临时改动：<code>git stash</code></li><li>恢复改动：<code>git stash pop</code></li></ul><p>git的储存功能是独立于分支的，即在其他分支上也可以执行这个命令。（执行命令前要确认目前处于哪个分支）</p>]]></content>
       
       
       <categories>
@@ -54,11 +54,11 @@
     
     
     <entry>
-      <title>Git用法(进阶)</title>
-      <link href="/2023/05/10/2023-5-10-Git%E7%94%A8%E6%B3%95-%E8%BF%9B%E9%98%B6/"/>
-      <url>/2023/05/10/2023-5-10-Git%E7%94%A8%E6%B3%95-%E8%BF%9B%E9%98%B6/</url>
+      <title>Git用法(基础)</title>
+      <link href="/2023/05/10/2023-5-10-Git%E7%94%A8%E6%B3%95-%E5%9F%BA%E7%A1%80/"/>
+      <url>/2023/05/10/2023-5-10-Git%E7%94%A8%E6%B3%95-%E5%9F%BA%E7%A1%80/</url>
       
-        <content type="html"><![CDATA[<h1 id="Git用法（进阶）"><a href="#Git用法（进阶）" class="headerlink" title="Git用法（进阶）"></a>Git用法（进阶）</h1><h2 id="分支细分"><a href="#分支细分" class="headerlink" title="分支细分"></a>分支细分</h2><ol><li><strong>主分支（master）</strong>：第一次向git仓库中提交更新记录时自定产生的一个分支。</li><li><strong>开发分支（develop）</strong>：作为开发的分支，基于master分支创建。</li><li><strong>功能分支（feature）</strong>：作为开发具体功能的分支，基于开发分支创建。</li></ol><p><strong>具体的功能在功能分支上实现，再合并到开发分支上，最终将开发分支合并到主分支，</strong></p><p>功能分支-&gt;开发分支-&gt;主分支</p><h2 id="分支命令"><a href="#分支命令" class="headerlink" title="分支命令"></a>分支命令</h2><ul><li><code>git branch</code> <strong>查看分支</strong></li><li><code>git branch 分支名称</code> <strong>创建分支（基于当前分支）</strong></li><li><code>git checkout 分支名称</code> <strong>切换分支</strong><ul><li>切换分支之前，当前分支的工作一定提交到git仓库中，<strong>保证当前分支上的工作区是完全干净的状态</strong>。否则可能会寄。</li></ul></li><li><code>git merge 来源分支</code><strong>合并分支</strong>（将来源分支合并到所在分支）</li><li><code>git branch -d 分支名称</code><strong>删除分支</strong>（分支被合并后才允许删除）<em>（-D是强制删除）</em></li></ul><h2 id="暂时保存更改"><a href="#暂时保存更改" class="headerlink" title="暂时保存更改"></a>暂时保存更改</h2><p>在git中，可以临时提取分支上所有的改动并存储，让开发人员得到一个干净的工作副本，临时转向其他工作。</p><p><strong>使用场景：</strong>分支临时切换</p><ul><li>存储临时改动：<code>git stash</code></li><li>恢复改动：<code>git stash pop</code></li></ul><p>git的储存功能是独立于分支的，即在其他分支上也可以执行这个命令。（执行命令前要确认目前处于哪个分支）</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Git用法（基础）"><a href="#Git用法（基础）" class="headerlink" title="Git用法（基础）"></a>Git用法（基础）</h1><h2 id="使用之前"><a href="#使用之前" class="headerlink" title="使用之前"></a>使用之前</h2><ul><li><code>git config  - -global user.name &quot;提交人&quot;</code></li><li><code>git config  - -global user.email &quot;邮箱地址&quot;</code></li></ul><h2 id="提交步骤"><a href="#提交步骤" class="headerlink" title="提交步骤"></a>提交步骤</h2><ol><li><code>git init</code> 初始化git仓库</li><li><code>git status</code> 查看文件状态</li><li><code>git add 文件名</code> 提交文件到暂存区</li><li><code>git commit -m 提交信息</code> 向仓库中提交代码</li><li><code>git log</code> 查看提交记录</li></ol><h2 id="撤销指令"><a href="#撤销指令" class="headerlink" title="撤销指令"></a>撤销指令</h2><p><code>git rm  - -cached 文件名</code> 将文件从git的暂存区中移除</p><p><code>git checkout 文件名</code> 将不正确修改的文件返回成暂存区中的文件。（即用原本的文件覆盖新的、未托管的文件）</p><p><code>git reset  - -hard 文件ID</code> 将git仓库中指定的更新记录恢复出来，并且<strong>覆盖</strong>暂存区和工作目录（电脑上的文件夹）；即只保留ID对应的文件，其余的删除掉。</p>]]></content>
       
       
       <categories>
@@ -193,17 +193,6 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -226,20 +215,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -259,9 +237,31 @@
     
     
     <entry>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>电影</title>
       <link href="/movies/index.html"/>
       <url>/movies/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
